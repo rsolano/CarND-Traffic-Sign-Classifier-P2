@@ -120,16 +120,20 @@ LeNet
 I chose to use the LeNet architecture as it was convered and in the lectures and lab. It was pointed out a as good starting point for a traffic sign classifier.
 
 * How does the final model's accuracy on the training, validation and test set provide evidence that the model is working well?
+During training the model does not see test set. Only after accuracy is satifactory only the validation set, the model is run once against the test set. A high accuracy on unseen data is evidence that the model can generalize the patterns learned during training. 
 
 
-###Test a Model on New Images
+### Test a Model on New Images
 
-####1. Choose five German traffic signs found on the web and provide them in the report. For each image, discuss what quality or qualities might be difficult to classify.
+#### 1. Choose five German traffic signs found on the web and provide them in the report. For each image, discuss what quality or qualities might be difficult to classify.
 
 Here are five German traffic signs that I found on the web:
 
-![alt text][image4] ![alt text][image5] ![alt text][image6] 
-![alt text][image7] ![alt text][image8]
+<img src="images/11.jpg" width="64" />
+<img src="images/12.jpg" width="64" />
+<img src="images/14.jpg" width="64" />
+<img src="images/17.jpg" width="64" />
+<img src="images/18.jpg" width="64" />
 
 The first image might be difficult to classify because ...
 
