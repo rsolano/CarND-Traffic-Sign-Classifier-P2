@@ -13,18 +13,6 @@ The goals / steps of this project are the following:
 * Analyze the softmax probabilities of the new images
 * Summarize the results with a written report
 
-
-[//]: # (Image References)
-
-[image1]: ./examples/visualization.jpg "Visualization"
-[image2]: ./examples/grayscale.jpg "Grayscaling"
-[image3]: ./examples/random_noise.jpg "Random Noise"
-[image4]: ./examples/placeholder.png "Traffic Sign 1"
-[image5]: ./examples/placeholder.png "Traffic Sign 2"
-[image6]: ./examples/placeholder.png "Traffic Sign 3"
-[image7]: ./examples/placeholder.png "Traffic Sign 4"
-[image8]: ./examples/placeholder.png "Traffic Sign 5"
-
 ## Rubric Points
 ### Here I will consider the [rubric points](https://review.udacity.com/#!/rubrics/481/view) individually and describe how I addressed each point in my implementation.  
 
@@ -53,10 +41,10 @@ I used the numpy library to calculate summary statistics of the traffic signs da
 The code for this step is contained in the third code cell.
 
 For this step I plotted a 10x10 grid of random images from the training set along with their corresponding labels.
-[image1]: ./img/10x10.png "Visualization"
+![Visualization](./img/10x10.png)
 
 I also plotted bar charts in order to visualize the number of examples per label in each data set.
-[image2]: ./img/train.png "Training set"
+![Data sets](./img/train.png)
 
 ### Design and Test a Model Architecture
 
