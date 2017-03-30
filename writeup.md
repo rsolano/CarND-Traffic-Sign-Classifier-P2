@@ -53,8 +53,10 @@ I used the numpy library to calculate summary statistics of the traffic signs da
 The code for this step is contained in the third code cell.
 
 For this step I plotted a 10x10 grid of random images from the training set along with their corresponding labels.
+[image1]: ./img/10x10.png "Visualization"
 
 I also plotted bar charts in order to visualize the number of examples per label in each data set.
+[image2]: ./img/train.png "Training set"
 
 ### Design and Test a Model Architecture
 
@@ -121,7 +123,7 @@ LeNet
 I chose to use the LeNet architecture as it was convered and in the lectures and lab. It was pointed out a as good starting point for a traffic sign classifier.
 
 * How does the final model's accuracy on the training, validation and test set provide evidence that the model is working well?
-During training the model does not see test set. Only after accuracy is satifactory only the validation set, the model is run once against the test set. A high accuracy on unseen data is evidence that the model can generalize the patterns learned during training. 
+During training the model does not see the test set. Only after accuracy is satifactory on the validation set, the model is run once against the test set. A high accuracy on unseen data is evidence that the model can generalize the patterns learned during training. 
 
 
 ### Test a Model on New Images
@@ -132,7 +134,7 @@ Here are five German traffic signs that I found on the web:
 
 <img src="images/11.jpg" width="64" /> <img src="images/12.jpg" width="64" /><img src="images/14.jpg" width="64" /> <img src="images/17.jpg" width="64" /> <img src="images/18.jpg" width="64" />
 
-The images are generally of good quality and offer a clear view of the traffic sign. The fifth image, however is cut off from the top and contains additional lettering, making it potentially difficult to classify accurately.
+The images are generally of good quality and offer a clear view of the traffic sign. In the fifth image, however, the sign is cut off from the top and contains additional lettering, making it potentially difficult to classify accurately.
 
 #### 2. Discuss the model's predictions on these new traffic signs and compare the results to predicting on the test set. Identify where in your code predictions were made. At a minimum, discuss what the predictions were, the accuracy on these new predictions, and compare the accuracy to the accuracy on the test set (OPTIONAL: Discuss the results in more detail as described in the "Stand Out Suggestions" part of the rubric).
 
