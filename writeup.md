@@ -53,8 +53,10 @@ I used the numpy library to calculate summary statistics of the traffic signs da
 The code for this step is contained in the third code cell.
 
 For this step I plotted a 10x10 grid of random images from the training set along with their corresponding labels.
+[image1]: ./img/10x10.png "Visualization"
 
 I also plotted bar charts in order to visualize the number of examples per label in each data set.
+[image2]: ./img/train.png "Training set"
 
 ### Design and Test a Model Architecture
 
@@ -111,8 +113,9 @@ The number of *epochs* was 30 and my chosen *batch size* was 128.
 The code for calculating the accuracy of the model is located in cell 15.
 
 My final model results were:
+* training set accuracy of 99.5%
 * validation set accuracy of 93%
-* test set accuracy of 91%
+* test set accuracy of 91.4%
 
 * What architecture was chosen?
 LeNet
@@ -120,49 +123,87 @@ LeNet
 I chose to use the LeNet architecture as it was convered and in the lectures and lab. It was pointed out a as good starting point for a traffic sign classifier.
 
 * How does the final model's accuracy on the training, validation and test set provide evidence that the model is working well?
+During training the model does not see the test set. Only after accuracy is satifactory on the validation set, the model is run once against the test set. A high accuracy on unseen data is evidence that the model can generalize the patterns learned during training. 
 
 
-###Test a Model on New Images
+### Test a Model on New Images
 
-####1. Choose five German traffic signs found on the web and provide them in the report. For each image, discuss what quality or qualities might be difficult to classify.
+#### 1. Choose five German traffic signs found on the web and provide them in the report. For each image, discuss what quality or qualities might be difficult to classify.
 
 Here are five German traffic signs that I found on the web:
 
-![alt text][image4] ![alt text][image5] ![alt text][image6] 
-![alt text][image7] ![alt text][image8]
+<img src="images/11.jpg" width="64" /> <img src="images/12.jpg" width="64" /><img src="images/14.jpg" width="64" /> <img src="images/17.jpg" width="64" /> <img src="images/18.jpg" width="64" />
 
-The first image might be difficult to classify because ...
+The images are generally of good quality and offer a clear view of the traffic sign. In the fifth image, however, the sign is cut off from the top and contains additional lettering, making it potentially difficult to classify accurately.
 
-####2. Discuss the model's predictions on these new traffic signs and compare the results to predicting on the test set. Identify where in your code predictions were made. At a minimum, discuss what the predictions were, the accuracy on these new predictions, and compare the accuracy to the accuracy on the test set (OPTIONAL: Discuss the results in more detail as described in the "Stand Out Suggestions" part of the rubric).
+#### 2. Discuss the model's predictions on these new traffic signs and compare the results to predicting on the test set. Identify where in your code predictions were made. At a minimum, discuss what the predictions were, the accuracy on these new predictions, and compare the accuracy to the accuracy on the test set (OPTIONAL: Discuss the results in more detail as described in the "Stand Out Suggestions" part of the rubric).
 
-The code for making predictions on my final model is located in the tenth cell of the Ipython notebook.
+The code for making predictions on my final model is located in cell *20*.
 
 Here are the results of the prediction:
 
 | Image			        |     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
+| Right-of-way at the next intersection | Right-of-way at the next intersection|
+| Priority road					| Priority road											|
 | Stop Sign      		| Stop sign   									| 
-| U-turn     			| U-turn 										|
-| Yield					| Yield											|
-| 100 km/h	      		| Bumpy Road					 				|
-| Slippery Road			| Slippery Road      							|
+| No entry      		| No entry					 				|
+| General caution			| *No passing*      							|
 
 
-The model was able to correctly guess 4 of the 5 traffic signs, which gives an accuracy of 80%. This compares favorably to the accuracy on the test set of ...
+The model was able to correctly guess 4 of the 5 traffic signs, which gives an accuracy of 80%. While the accuracy on the test set was of 91.4%, had the fifth image been of higher quality (or at least not partially cut off) accuracy on the new set could have been of 100%.
 
-####3. Describe how certain the model is when predicting on each of the five new images by looking at the softmax probabilities for each prediction and identify where in your code softmax probabilities were outputted. Provide the top 5 softmax probabilities for each image along with the sign type of each probability. (OPTIONAL: as described in the "Stand Out Suggestions" part of the rubric, visualizations can also be provided such as bar charts)
+#### 3. Describe how certain the model is when predicting on each of the five new images by looking at the softmax probabilities for each prediction and identify where in your code softmax probabilities were outputted. Provide the top 5 softmax probabilities for each image along with the sign type of each probability. (OPTIONAL: as described in the "Stand Out Suggestions" part of the rubric, visualizations can also be provided such as bar charts)
 
-The code for making predictions on my final model is located in the 11th cell of the Ipython notebook.
+The code for making predictions on my final model is located in cell number 22.
 
-For the first image, the model is relatively sure that this is a stop sign (probability of 0.6), and the image does contain a stop sign. The top five soft max probabilities were
+For the first image, the model guessed correctly *Right-of-way at the next intersection* sign (probability of 1.00). The top five soft max probabilities were:
 
 | Probability         	|     Prediction	        					| 
 |:---------------------:|:---------------------------------------------:| 
-| .60         			| Stop sign   									| 
-| .20     				| U-turn 										|
-| .05					| Yield											|
-| .04	      			| Bumpy Road					 				|
-| .01				    | Slippery Road      							|
+| 1.00         			| Right-of-way at the next intersection | 
+| .00     				| Beware of ice/snow |
+| .00					| Double curve	|
+| .00	      			| Speed limit (20km/h) |
+| .00				    | Speed limit (30km/h) |
 
 
-For the second image ... 
+For the second image the model also guessed the *Priority road* sign (probability of 1.00). The top five soft max probabilities were:
+
+| Probability         	|     Prediction	        					| 
+|:---------------------:|:---------------------------------------------:| 
+| 1.00         			| Priority road | 
+| .00     				| Roundabout mandatory |
+| .00					| No entry	|
+| .00	      			| Yield |
+| .00				    | Keep right |
+
+For the third image the model predicted correctly the *Stop* sign (probability of .98). The top five soft max probabilities were:
+
+| Probability         	|     Prediction	        					| 
+|:---------------------:|:---------------------------------------------:| 
+| .98         			| Stop | 
+| .0073     				| Wild animals crossing |
+| .0071				| Turn right ahead	|
+| .00009	      			| Speed limit (70km/h)|
+| .00002			    | Speed limit (30km/h) |
+
+For the fourth image the model predicted correctly the *No entry* sign (probability of 1.00). The top five soft max probabilities were:
+
+| Probability         	|     Prediction	        					| 
+|:---------------------:|:---------------------------------------------:| 
+| 1.00         			| No entry | 
+| .00     				| Turn left ahead |
+| .00					| Speed limit (20km/h)	|
+| .00	      			| Speed limit (30km/h) |
+| .00				    | Speed limit (50km/h) |
+
+The fifth image was **incorrectly** predicted as the *No passing* sign. The image actually contained the *General caution* sign. The top five soft max probabilities were:
+
+| Probability         	|     Prediction	        					| 
+|:---------------------:|:---------------------------------------------:| 
+| .99         			| No passing | 
+| .009     				| No entry |
+| .00					| Priority road	|
+| .00	      			| Ahead only |
+| .00				    | End of no passing |
